@@ -1,0 +1,41 @@
+public class Researcher {
+
+    public String name;
+    public String position;
+    public int computerNumber;
+    public static int totalResearchers = 0;
+
+    public Researcher() {
+        name = "";
+        position = "";
+        computerNumber = 0;
+        totalResearchers++;
+    }
+
+    public Researcher(String n, String p, int num) {
+        name = n;
+        position = p;
+        computerNumber = num;
+        totalResearchers++;
+    }
+
+    public void displayResearcher() {
+        System.out.println("Name: " + name + ", Position: " + position + ", Computer Number: " + computerNumber);
+    }
+
+    public boolean compare(Researcher otherResearcher) {
+        return this.computerNumber == otherResearcher.computerNumber
+                && this.name.equals(otherResearcher.name)
+                && this.position.equals(otherResearcher.position);
+    }
+
+    public void modifyComputerNumber(int newNumber) {
+        computerNumber = newNumber;
+    }
+
+    public void addResearcher(String newName, String newPosition, int newComputerNumber) {
+        name = newName;
+        position = newPosition;
+        computerNumber = newComputerNumber;
+    }
+}
