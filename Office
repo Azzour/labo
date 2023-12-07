@@ -1,0 +1,24 @@
+public class Office {
+
+    public int officeCode;
+    public String officeName;
+    public Researcher officeResearchers[];
+
+    public Office() {
+    }
+
+    public Office(int code, String name, Researcher researchers[]) {
+        officeCode = code;
+        officeName = name;
+        officeResearchers = new Researcher[5];
+        officeResearchers = researchers;
+    }
+
+    void displayOffice() {
+        System.out.println("Office Code: " + officeCode + ", Office Name: " + officeName);
+        int length = this.officeResearchers.length;
+        for (int i = 0; i < length; i++) {
+            officeResearchers[i].displayResearcher();
+        }
+    }
+}
