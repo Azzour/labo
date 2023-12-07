@@ -1,0 +1,24 @@
+public class Laboratory {
+
+    public String labName;
+    public String specialization;
+    public Address labAddress;
+    public Office labOffices[];
+
+    public Laboratory(String name, String specialization, Address address, Office offices[]) {
+        labName = name;
+        this.specialization = specialization;
+        labAddress = address;
+        labOffices = new Office[50];
+        labOffices = offices;
+    }
+
+    public void displayLab() {
+        System.out.println("Laboratory Name: " + labName + ", Specialization: " + specialization);
+        this.labAddress.displayAddress();
+        int length = labOffices.length;
+        for (int i = 0; i < length; i++) {
+            labOffices[i].displayOffice();
+        }
+    }
+}
