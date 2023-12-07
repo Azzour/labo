@@ -1,0 +1,48 @@
+public class Test {
+
+    public static void main(String[] args) {
+        Address address1 = new Address();
+        address1.city = "Paris";
+        address1.county = "Île-de-France";
+        address1.postalCode = 75001;
+        address1.displayAddress();
+        address1.modifyPostalCode(1987);
+        address1.displayAddress();
+
+        Address address2 = new Address("Berlin", "Brandenburg", 10115);
+        address2.displayAddress();
+        address2.modifyPostalCode(10100);
+        address2.displayAddress();
+
+        Researcher researcher1 = new Researcher();
+        researcher1.name = "John Doe";
+        researcher1.position = "Software Engineer";
+
+        Researcher researcher2 = new Researcher("Jane Doe", "Data Scientist", 12345);
+        researcher2.displayResearcher();
+
+        System.out.println("Number of researchers: " + Researcher.totalResearchers);
+
+        researcher2.compare(researcher1);
+        researcher2.modifyComputerNumber(5468466);
+        researcher1.modifyComputerNumber(777777);
+
+        Researcher researcher3 = new Researcher();
+        researcher3.addResearcher("Alice Smith", "Researcher", 25000);
+        researcher3.displayResearcher();
+
+        System.out.println("Number of researchers: " + researcher3.totalResearchers);
+
+        Researcher researchers[] = {researcher1, researcher2, researcher3};
+
+        Office office1 = new Office(111, "Main Office", researchers);
+        Office office2 = new Office(121, "Branch Office", researchers);
+
+        Office offices[] = {office1, office2};
+
+        Address labAddress = new Address("Research Lab", "Technology Department", address1, offices);
+
+        Laboratory lab = new Laboratory("Innovation Lab", "Computational Research", labAddress, offices);
+        lab.displayLab();
+    }
+}
