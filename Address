@@ -1,0 +1,25 @@
+public class Address {
+    public String county;
+    public String city;
+    public int postalCode;
+
+    public Address() {
+        county = "";
+        city = "";
+        postalCode = 0;
+    }
+
+    public Address(String cityName, String countyName, int code) {
+        county = countyName;
+        city = cityName;
+        postalCode = code;
+    }
+
+    public void displayAddress() {
+        System.out.println(city + "/" + county + "/" + postalCode);
+    }
+
+    public void modifyPostalCode(int newCode) {
+        postalCode = newCode;
+    }
+}
